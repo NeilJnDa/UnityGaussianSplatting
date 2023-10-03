@@ -29,6 +29,7 @@ class GaussianSplatRenderSystem
         }
 
         m_Splats.Add(r, new MaterialPropertyBlock());
+        Debug.Log(m_Splats.Count);
     }
 
     public void UnregisterSplat(GaussianSplatRenderer r)
