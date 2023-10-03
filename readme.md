@@ -13,26 +13,23 @@ people have done their own implementations (e.g. WebGPU at [cvlab-epfl](https://
 Code in here so far is randomly cribbled together from reading the paper (as well as earlier literature on EWA splatting), looking at the official CUDA implementation, and so on. Current state:
 - The code does **not** use the "tile-based splat rasterizer" bit from the paper; it just draws each gaussian splat as a screenspace aligned rectangle that covers the extents of it.
 - Splat color accumulation is done by rendering front-to-back, with a blending mode that results in the same accumulated color as their tile-based renderer.
-- Splat sorting is done with a AMD FidelityFX derived radix sort, or (on DX11) with a GPU bitonic sort that is lifted from Unity HDRP codebase.
+- Splat sorting is done with a AMD FidelityFX derived radix sort.
 
 ## Usage
 
 :warning: Note: this is all _**a toy**_, it is not robust, it does not handle errors gracefully, it does not interact or composite well with the "rest of rendering", it is not fast, etc. etc. Also, do not file bugs or issues just yet; I will most likely just ignore them and do whatever I please. I told you so! :warning:
 
-First download or clone this repository and open as a Unity (2022.3, other versions might also work) project. Note that the project defaults to DX12 on Windows,
-since then it can use a faster sorting routine (DX11 should also work, but sorting will be slower).
+First download or clone this repository and open as a Unity (2022.3, other versions might also work) project. Note that the project
+requires DX12 or Vulkan on Windows, i.e. DX11 will not work.
 
-<img align="right" src="Doc/shotAssetCreator.png" width="250px">
+<img align="right" src="Doc/shotAssetImport.png" width="250px">
 
-Next up, **create some GaussianSplat assets**: open `Tools -> Gaussian Splats -> Create GaussianSplatAsset` menu within Unity. In the dialog point it to
-your gaussian splat "model" directory (it is expected to contain `cameras.json` and `point_cloud/iteration_7000/point_cloud.ply` inside of it,
-and be an actual Gaussian Splat model, not something else).
-
-Pick desired compression options and output folder, and press "Create Asset" button.
-
-If everything was fine, there should be a GaussianSplat asset that has a bunch of data images next to it:
-
-<img src="Doc/shotAsset.png" width="600px">
+Next up, **create some GaussianSplat assets**: just drop your Gaussian Splat `.ply` file into Unity (e.g. from under
+`point/cloud/iteration_30000/point_cloud.ply` when using models from official paper). Optionally, drop
+the `cameras.json` file next to it. The project contains a custom PLY importer that allows you to choose asset size vs.
+fidelity options. The compression even at "very low" quality setting is decently usable, e.g. 
+this capture at Very Low preset is under 8MB of total size (click to see the video): \
+[![Watch the video](https://img.youtube.com/vi/iccfV0YlWVI/0.jpg)](https://youtu.be/iccfV0YlWVI)
 
 Since the gaussian splat models are quite large, I have not included any in this Github repo. The original
 [paper github page](https://github.com/graphdeco-inria/gaussian-splatting) has a a link to
@@ -44,20 +41,27 @@ There are various controls on the script to debug/visualize the data, as well as
 locations.
 
 The rendering takes game object transformation matrix into account; the official gaussian splat models seem to be all rotated by about
--160 degrees around X axis, and mirrored around Z axis, so in the sample scene the object has such a transform set up, and the camera is setup as a
-child object.
+-160 degrees around X axis, and mirrored around Z axis, so in the sample scene the object has such a transform set up.
 
+In the built-in render pipeline, the gaussian splatting should work with no extra steps.
+If you are using **URP**, add GaussianSplatURPFeature to the URP renderer settings. If you are using **HDRP**, add
+CustomPass volume object and a GaussianSplatHDRPPass entry to it. Maybe also set injection point to "after postprocess"
+to stop auto-exposure from going wild.
 
 _That's it!_
 
 Wishlist that I may or might not do at some point:
+- [ ] Make low quality levels work on mobile (look into ASTC texture compression?)
+- [ ] Make a C/WebAssembly library to do PLY quantization/compression just like in Unity
+- [ ] Make a WebGL/WebGPU example that uses the smaller data files
 - [ ] Make rendering faster (actual tiled compute shader rasterizer)
-- [ ] Maybe look at making it work in URP/HDRP? Not sure yet
-- [ ] Look into making on-disk data size smaller
+- [x] Make it work in URP and HDRP as well
+- [x] Make multiple Gaussian Splat objects in the scene work better
 - [x] Make it respect the game object transform
 - [x] Look at ways to make the data sets smaller (in memory) ([blog post 1](https://aras-p.info/blog/2023/09/13/Making-Gaussian-Splats-smaller/), [blog post 2](https://aras-p.info/blog/2023/09/27/Making-Gaussian-Splats-more-smaller/))
 - [x] Integrate better with "the rest" of rendering that might be in the scene (BiRP)
 - [x] Make sorting faster (bitonic -> FidelityFX radix sort)
+
 
 ## Write-ups
 
@@ -74,7 +78,6 @@ at "Medium" asset quality level (283MB asset file):
 * Windows (NVIDIA RTX 3080 Ti):
   * Official SBIR viewer: 7.4ms (135FPS). 4.8GB VRAM usage.
   * Unity, DX12 or Vulkan: 12.6ms (79FPS) - 9.4ms rendering, 2.4ms sorting, 0.7ms splat view calc. 1.2GB VRAM usage.
-  * Unity, DX11: 20.8ms (48FPS) - 9.6ms rendering, 10.4ms sorting, 0.6ms splat view calc.
 * Mac (Apple M1 Max):
   * Unity, Metal: 31.8ms (31FPS).
 
@@ -85,5 +88,4 @@ per splat (for sorting, caching view dependent data etc.).
 ## External Code Used
 
 - [zanders3/json](https://github.com/zanders3/json), MIT license, (c) 2018 Alex Parker.
-- "Island" GPU sorting code adapted from [Tim Gfrerer blog post](https://poniesandlight.co.uk/reflect/bitonic_merge_sort/).
 - "Ffx" GPU sorting code is [AMD FidelityFX ParallelSort](https://github.com/GPUOpen-Effects/FidelityFX-ParallelSort), ported to Unity by me.

@@ -11,7 +11,7 @@ using UnityEngine.Experimental.Rendering;
 [BurstCompile]
 public class GaussianSplatValidator
 {
-    [MenuItem("Tools/Gaussian Splats/Debug/Validate Rendering")]
+    [MenuItem("Tools/Gaussian Splats/Validate Rendering")]
     public static unsafe void Validate()
     {
         var gaussians = Object.FindObjectOfType(typeof(GaussianSplatRenderer)) as GaussianSplatRenderer;
@@ -24,10 +24,9 @@ public class GaussianSplatValidator
         }
         var paths = new[]
         {
-            "Assets/GaussianAssets/bicycle_30k.asset",
-            "Assets/GaussianAssets/truck_30k.asset",
-            "Assets/GaussianAssets/garden_30k.asset",
-            //"Assets/GaussianAssets/playroom_30k.asset",
+            "Assets/GaussianAssets/bicycle_30k/bicycle_30k.ply",
+            "Assets/GaussianAssets/truck_30k/truck_30k.ply",
+            "Assets/GaussianAssets/garden_30k/garden_30k.ply",
         };
 
         int width = 1200;
