@@ -29,7 +29,6 @@ class GaussianSplatRenderSystem
         }
 
         m_Splats.Add(r, new MaterialPropertyBlock());
-        Debug.Log(m_Splats.Count);
     }
 
     public void UnregisterSplat(GaussianSplatRenderer r)
@@ -87,7 +86,6 @@ class GaussianSplatRenderSystem
             var posB = camTr.InverseTransformPoint(trB.position);
             return posA.z.CompareTo(posB.z);
         });
-
         return true;
     }
 

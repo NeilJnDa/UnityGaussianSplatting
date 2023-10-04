@@ -30,7 +30,7 @@ public class CameraFly : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            transform.Rotate(new Vector3(-Input.GetAxis("Mouse Y") * mouseSpeed, Input.GetAxis("Mouse X") * mouseSpeed, 0));
+            transform.Rotate(new Vector3(Input.GetAxis("Mouse Y") * mouseSpeed, -Input.GetAxis("Mouse X") * mouseSpeed, 0));
             MouseX = transform.rotation.eulerAngles.x;
             MouseY = transform.rotation.eulerAngles.y;
             transform.rotation = Quaternion.Euler(MouseX, MouseY, 0);
