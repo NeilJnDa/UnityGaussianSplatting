@@ -34,10 +34,12 @@ public class Portal : MonoBehaviour
             PairPortal.MyCamera.projectionMatrix = camera.projectionMatrix;
 
             var relativePosition = transform.InverseTransformPoint(camera.transform.position);
+            relativePosition = Vector3.Scale(relativePosition, new Vector3(-1, 1, -1));
             PairPortal.MyCamera.transform.position = PairPortal.transform.TransformPoint(relativePosition);
 
-            var relativeRotation = transform.InverseTransformPoint(camera.transform.forward);
-            PairPortal.MyCamera.transform.forward = PairPortal.transform.TransformDirection(relativeRotation);
+            var relativeDirection = transform.InverseTransformDirection(camera.transform.forward);
+            relativeDirection = Vector3.Scale(relativeDirection, new Vector3(-1, 1, -1));
+            PairPortal.MyCamera.transform.forward = PairPortal.transform.TransformDirection(relativeDirection);
         }
     }
 
