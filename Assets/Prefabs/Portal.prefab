@@ -140,9 +140,25 @@ PrefabInstance:
       value: Portal
       objectReference: {fileID: 0}
     - target: {fileID: 6072950624694365348, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6072950624694365348, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6072950624694365348, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 99d8c9b8a8b00e74cb65155949a9e3ff, type: 2}
+    - target: {fileID: 6913794804599401395, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6913794804599401395, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6913794804599401395, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -157,6 +173,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2982797681659110642}
+    - targetCorrespondingSourceObject: {fileID: -5624543535580069947, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 436109241359265253}
+    - targetCorrespondingSourceObject: {fileID: -5624543535580069947, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1560459626311010421}
   m_SourcePrefab: {fileID: 100100000, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
 --- !u!4 &4785581225247100455 stripped
 Transform:
@@ -182,3 +204,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myCamera: {fileID: 7804684509068135486}
   pairPortal: {fileID: 0}
+  portalCollider: {fileID: 1560459626311010421}
+--- !u!1 &8364010025606911497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5624543535580069947, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
+  m_PrefabInstance: {fileID: 5035998248177543628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &436109241359265253
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8364010025606911497}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2607347306135948246, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
+--- !u!114 &1560459626311010421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8364010025606911497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33fb138aefc3c44459d63fac2c2b1b81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
