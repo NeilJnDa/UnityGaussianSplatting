@@ -4,10 +4,20 @@ using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Rendering;
 
+[SerializeField]
+public enum PortalState
+{
+    Disabled,
+    Enabled,
+    JustEntered
+}
 [ExecuteInEditMode]
 public class Portal : MonoBehaviour
 {
-    public bool enable = true;
+    [Tooltip("By default, is this portal enabled")]
+    [SerializeField] private bool enableByDefault = true;
+    [Tooltip("Do not change from Inspector")]
+    [SerializeField] private PortalState portalState = PortalState.Enabled; 
     [SerializeField] private Camera myCamera;
     public Camera MyCamera {get { return myCamera; } }
 
@@ -20,12 +30,16 @@ public class Portal : MonoBehaviour
     private void OnEnable()
     {
         Camera.onPreRender += UpdateCamera;
-        portalCollider.MainCameraTriggerFromFront.AddListener(OnEnterPortal);
+        portalCollider.MainCameraTriggerFromFront.AddListener(OnCameraEnterPortal);
+        portalCollider.MainCameraLeave.AddListener(OnCameraLeavePortal);
+        portalState = PortalState.Enabled;
     }
     private void OnDisable()
     {
         Camera.onPreRender -= UpdateCamera;
-        portalCollider.MainCameraTriggerFromFront.RemoveListener(OnEnterPortal);
+        portalCollider.MainCameraTriggerFromFront.RemoveListener(OnCameraEnterPortal);
+        portalCollider.MainCameraLeave.RemoveListener(OnCameraLeavePortal);
+        portalState = PortalState.Disabled;
     }
     /// <summary>
     /// Update camera position of paired portal
@@ -46,11 +60,26 @@ public class Portal : MonoBehaviour
             PairPortal.MyCamera.transform.forward = PairPortal.transform.TransformDirection(relativeDirection);
         }
     }
-    private void OnEnterPortal(Collider collider)
+    private void OnCameraEnterPortal(Collider collider)
     {
+        if (portalState == PortalState.Disabled || portalState == PortalState.JustEntered) return;
         Debug.Log(collider.gameObject.name + " Enter " + this.gameObject.name);
+
+        //Tell paired portal
+        PairPortal.portalState = PortalState.JustEntered;
+
         collider.transform.position = PairPortal.MyCamera.transform.position;
         collider.transform.rotation = PairPortal.MyCamera.transform.rotation;
+
     }
-    
+    private void OnCameraLeavePortal(Collider collider)
+    {
+        //Debug.Log(collider.gameObject.name + " Leave " + this.gameObject.name);
+
+        //Can teleport after leaving
+        if (enableByDefault)
+            this.portalState = PortalState.Enabled;
+        else
+            this.portalState = PortalState.Disabled;
+    }
 }

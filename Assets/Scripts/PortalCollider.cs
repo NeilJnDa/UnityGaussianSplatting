@@ -10,9 +10,10 @@ public class CollisionTriggerEvent : UnityEvent<Collider>
 public class PortalCollider : MonoBehaviour
 {
     public CollisionTriggerEvent MainCameraTriggerFromFront = new CollisionTriggerEvent();
+    public CollisionTriggerEvent MainCameraLeave = new CollisionTriggerEvent();
+
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.transform.tag == "MainCamera")
         {
             Vector3 relativeDirection = other.transform.position - this.transform.position;
@@ -23,6 +24,14 @@ public class PortalCollider : MonoBehaviour
                 //Trigger from front
                 MainCameraTriggerFromFront.Invoke(other);
             }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.tag == "MainCamera")
+        {
+            //Leave
+            MainCameraLeave.Invoke(other);
         }
     }
 }

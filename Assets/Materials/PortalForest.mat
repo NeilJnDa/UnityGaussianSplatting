@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PortalTexture:
-        m_Texture: {fileID: 8400000, guid: 81dc63654cd1b39469f4636721ea0da0, type: 2}
+        m_Texture: {fileID: 8400000, guid: b6c4546c6f9286e4f88bebdf5c373689, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
