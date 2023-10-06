@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PortalForest
+  m_Name: PortalTree
   m_Shader: {fileID: -6465566751694194690, guid: 3c32d3ec8dacc38409b7f61647b622cc, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

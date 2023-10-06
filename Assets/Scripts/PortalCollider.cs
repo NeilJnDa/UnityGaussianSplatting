@@ -9,6 +9,13 @@ public class CollisionTriggerEvent : UnityEvent<Collider>
 }
 public class PortalCollider : MonoBehaviour
 {
+    public Collider GetCollider {
+        get {
+            if (m_collider == null)
+                m_collider = GetComponent<Collider>();
+            return m_collider;
+        } }
+    private Collider m_collider;
     public CollisionTriggerEvent MainCameraTriggerFromFront = new CollisionTriggerEvent();
     public CollisionTriggerEvent MainCameraLeave = new CollisionTriggerEvent();
 

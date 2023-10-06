@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,6 +42,25 @@ public class Portal : MonoBehaviour
         portalCollider.MainCameraLeave.RemoveListener(OnCameraLeavePortal);
         portalState = PortalState.Disabled;
     }
+    private void Update()
+    {
+        InCameraView();
+    }
+
+    private void InCameraView()
+    {
+        var planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
+        bool visible =  GeometryUtility.TestPlanesAABB(planes, portalCollider.GetCollider.bounds);
+        if (visible)
+        {
+            pairPortal.MyCamera.enabled = true;
+        }
+        else
+        {
+            pairPortal.MyCamera.enabled = false;
+        }
+    }
+
     /// <summary>
     /// Update camera position of paired portal
     /// </summary>
