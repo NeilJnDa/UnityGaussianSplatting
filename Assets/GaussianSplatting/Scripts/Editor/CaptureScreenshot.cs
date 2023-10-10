@@ -1,9 +1,10 @@
+// SPDX-License-Identifier: MIT
 using UnityEditor;
 using UnityEngine;
 
 public class CaptureScreenshot : MonoBehaviour
 {
-    [MenuItem("Tools/Gaussian Splats/Capture Screenshot %g")]
+    [MenuItem("Tools/Gaussian Splats/Debug/Capture Screenshot %g")]
     public static void CaptureShot()
     {
         int counter = 0;

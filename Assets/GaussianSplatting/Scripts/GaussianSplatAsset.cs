@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MIT
 using System;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Mathematics;
@@ -6,7 +7,7 @@ using UnityEngine.Experimental.Rendering;
 
 public class GaussianSplatAsset : ScriptableObject
 {
-    public const int kCurrentVersion = 20231002;
+    public const int kCurrentVersion = 20231006;
     public const int kChunkSize = 256;
     public const int kTextureWidth = 2048; //@TODO: bump to 4k?
 
@@ -139,11 +140,11 @@ public class GaussianSplatAsset : ScriptableObject
     [HideInInspector] public GraphicsFormat m_ColorFormat;
     [HideInInspector] public int m_ColorWidth, m_ColorHeight;
 
-    [HideInInspector] public GaussianSplatAssetByteBuffer m_PosData;
-    [HideInInspector] public GaussianSplatAssetByteBuffer m_ColorData;
-    [HideInInspector] public GaussianSplatAssetByteBuffer m_OtherData;
-    [HideInInspector] public GaussianSplatAssetByteBuffer m_SHData;
-    [HideInInspector] public GaussianSplatAssetByteBuffer m_ChunkData;
+    [HideInInspector] public TextAsset m_PosData;
+    [HideInInspector] public TextAsset m_ColorData;
+    [HideInInspector] public TextAsset m_OtherData;
+    [HideInInspector] public TextAsset m_SHData;
+    [HideInInspector] public TextAsset m_ChunkData;
 
     [HideInInspector] public CameraInfo[] m_Cameras;
 

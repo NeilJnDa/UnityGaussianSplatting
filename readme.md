@@ -17,19 +17,23 @@ Code in here so far is randomly cribbled together from reading the paper (as wel
 
 ## Usage
 
-:warning: Note: this is all _**a toy**_, it is not robust, it does not handle errors gracefully, it does not interact or composite well with the "rest of rendering", it is not fast, etc. etc. Also, do not file bugs or issues just yet; I will most likely just ignore them and do whatever I please. I told you so! :warning:
+:warning: Note: this is all _**a toy**_, it can be not robust, not handle errors, not composite well with the rest of rendering, not be fast, etc. Also, do not file bugs or issues just yet; I will most likely just ignore them and do whatever I please. I told you so! :warning:
 
 First download or clone this repository and open as a Unity (2022.3, other versions might also work) project. Note that the project
 requires DX12 or Vulkan on Windows, i.e. DX11 will not work.
 
-<img align="right" src="Doc/shotAssetImport.png" width="250px">
+<img align="right" src="Doc/shotAssetCreator.png" width="250px">
 
-Next up, **create some GaussianSplat assets**: just drop your Gaussian Splat `.ply` file into Unity (e.g. from under
-`point/cloud/iteration_30000/point_cloud.ply` when using models from official paper). Optionally, drop
-the `cameras.json` file next to it. The project contains a custom PLY importer that allows you to choose asset size vs.
-fidelity options. The compression even at "very low" quality setting is decently usable, e.g. 
+Next up, **create some GaussianSplat assets**: open `Tools -> Gaussian Splats -> Create GaussianSplatAsset` menu within Unity.
+In the dialog, point `Input PLY File` to your Gaussian Splat file (note that it has to be a gaussian splat PLY file, not some 
+other PLY file. E.g. in the official paper models, the correct files are under `point_cloud/iteration_*/point_cloud.ply`).
+Optionally there can be `cameras.json` next to it or somewhere in parent folders.
+
+Pick desired compression options and output folder, and press "Create Asset" button. The compression even at "very low" quality setting is decently usable, e.g. 
 this capture at Very Low preset is under 8MB of total size (click to see the video): \
 [![Watch the video](https://img.youtube.com/vi/iccfV0YlWVI/0.jpg)](https://youtu.be/iccfV0YlWVI)
+
+If everything was fine, there should be a GaussianSplat asset that has several data files next to it.
 
 Since the gaussian splat models are quite large, I have not included any in this Github repo. The original
 [paper github page](https://github.com/graphdeco-inria/gaussian-splatting) has a a link to
@@ -48,19 +52,21 @@ If you are using **URP**, add GaussianSplatURPFeature to the URP renderer settin
 CustomPass volume object and a GaussianSplatHDRPPass entry to it. Maybe also set injection point to "after postprocess"
 to stop auto-exposure from going wild.
 
+<img align="right" src="Doc/shotEdit.jpg" width="250px">
+
+When a GaussianSplatRenderer object is selected, there's an additional tool that shows up in the scene view to edit the splats.
+You can rectangle-drag to select them (shift+drag adds to selection). Usual Select All, Invert Selection etc. shortcuts work too.
+Delete/Backspace deletes the selected splats. In the inspector there's a button then to export the "edited" object back into
+a Gaussian Splat PLY file. This is best done using Very High import option for the original splat PLY file.
+
 _That's it!_
 
 Wishlist that I may or might not do at some point:
+- [ ] Investigate hashed alpha testing instead of blending (removes need for sorting splats)
 - [ ] Make low quality levels work on mobile (look into ASTC texture compression?)
 - [ ] Make a C/WebAssembly library to do PLY quantization/compression just like in Unity
 - [ ] Make a WebGL/WebGPU example that uses the smaller data files
 - [ ] Make rendering faster (actual tiled compute shader rasterizer)
-- [x] Make it work in URP and HDRP as well
-- [x] Make multiple Gaussian Splat objects in the scene work better
-- [x] Make it respect the game object transform
-- [x] Look at ways to make the data sets smaller (in memory) ([blog post 1](https://aras-p.info/blog/2023/09/13/Making-Gaussian-Splats-smaller/), [blog post 2](https://aras-p.info/blog/2023/09/27/Making-Gaussian-Splats-more-smaller/))
-- [x] Integrate better with "the rest" of rendering that might be in the scene (BiRP)
-- [x] Make sorting faster (bitonic -> FidelityFX radix sort)
 
 
 ## Write-ups
@@ -85,7 +91,16 @@ Besides the gaussian splat asset that is loaded into GPU memory, currently this 
 per splat (for sorting, caching view dependent data etc.).
 
 
-## External Code Used
+## License and External Code Used
+
+The code I wrote for this is under MIT license. The project also uses several 3rd party libraries:
 
 - [zanders3/json](https://github.com/zanders3/json), MIT license, (c) 2018 Alex Parker.
-- "Ffx" GPU sorting code is [AMD FidelityFX ParallelSort](https://github.com/GPUOpen-Effects/FidelityFX-ParallelSort), ported to Unity by me.
+- "Ffx" GPU sorting code is based on
+  [AMD FidelityFX ParallelSort](https://github.com/GPUOpen-Effects/FidelityFX-ParallelSort), MIT license,
+  (c) 2020-2021 Advanced Micro Devices, Inc. Ported to Unity by me.
+
+However, keep in mind that the [license of the original paper implementation](https://github.com/graphdeco-inria/gaussian-splatting/blob/main/LICENSE.md)
+says that the official _training_ software for the Gaussian Splats is for educational / academic / non-commercial
+purpose; commercial usage requires getting license from INRIA. That is: even if this viewer / integration
+into Unity is just "MIT license", you need to separately consider *how* did you get your Gaussian Splat PLY files.
