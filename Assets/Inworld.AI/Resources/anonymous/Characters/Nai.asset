@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0447596b1a67de49ba5720fda0bdabe, type: 3}
+  m_Name: Nai
+  m_EditorClassIdentifier: 
+  characterName: Nai
+  brain: workspaces/default-me1ve2x0mhhvz-mevhjaxq/characters/nai
+  avatar: {fileID: 0}
+  workspace: workspaces/default-me1ve2x0mhhvz-mevhjaxq
+  currentScene: workspaces/default-me1ve2x0mhhvz-mevhjaxq/characters/nai
+  ownerShip: 0
+  defaultThumbnail: {fileID: 2800000, guid: bd1999ed1aea47c4cbbfb6bfe91dccf2, type: 3}
+  index: 0
+  triggers: []
+  scenes:
+  - workspaces/default-me1ve2x0mhhvz-mevhjaxq/scenes/the_queens_castle
+  modelUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_model/ffd15102-12e1-432c-ad13-016076d91cea.glb
+  posUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/ffd15102-12e1-432c-ad13-016076d91cea_posture.jpg
+  previewImgUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/ffd15102-12e1-432c-ad13-016076d91cea_portrait.jpg
+  characterID: 2113d138-8f08-4406-866b-41f5c53a989e

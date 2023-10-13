@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 679553faa086cdc48a58556300e27230, type: 3}
+  m_Name: Inworld AI Demos
+  m_EditorClassIdentifier: 
+  title: Inworld AI Demos
+  fullName: workspaces/default-me1ve2x0mhhvz-mevhjaxq
+  characters:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: b7509b6adaa1ce4488442dd1f5c5470f, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 6b7a66ec42c1a564c8d024dbb6e587d6, type: 2}
+  - {fileID: 11400000, guid: ce178745455a71f4dbf7c533a2df7a83, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 0c091f52a92caa24fb77e45e5bdb2d84, type: 2}
+  - {fileID: 11400000, guid: e35c61387a02f8749a557852b38fd706, type: 2}
+  scenes:
+  - {fileID: 11400000, guid: 4440ca46862b43541b25eb4624b372ac, type: 2}
+  - {fileID: 11400000, guid: 3fea75c7583e95a46b185a50510b1536, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 1ff409699652fa249918387a9d8101e2, type: 2}
+  - {fileID: 11400000, guid: 34a58d7b9cc6d364da8275cbc656200c, type: 2}
+  integrations:
+  - {fileID: 11400000, guid: ce2ee78f2b53fd947b19202da9e0d3ce, type: 2}
+  - {fileID: 11400000, guid: 29eaa7e0b8b9b784a86f9d8833a521d2, type: 2}
+  index: 0

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ad0515a2868cd4282589144c7820fd, type: 3}
+  m_Name: The White Rabbit's Shop
+  m_EditorClassIdentifier: 
+  fullName: workspaces/default-me1ve2x0mhhvz-mevhjaxq/scenes/the_white_rabbits_shop
+  shortName: The White Rabbit's Shop
+  description: 'The White Rabbit and {player} are in the White Rabbit''s shop, where
+    they sell pocket watches to visitors. The shop is lined with countless watches
+    of all styles, sizes and colors. '
+  characters:
+  - workspaces/default-me1ve2x0mhhvz-mevhjaxq/characters/the_white_rabbit
+  triggers: []
+  index: 0
