@@ -773,10 +773,10 @@ PrefabInstance:
       addedObject: {fileID: 2982797681659110642}
     - targetCorrespondingSourceObject: {fileID: -5624543535580069947, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 436109241359265253}
+      addedObject: {fileID: 1560459626311010421}
     - targetCorrespondingSourceObject: {fileID: -5624543535580069947, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1560459626311010421}
+      addedObject: {fileID: 2934215551655881871}
   m_SourcePrefab: {fileID: 100100000, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
 --- !u!4 &4785581225247100455 stripped
 Transform:
@@ -810,28 +810,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -5624543535580069947, guid: 1fd0cbd137017f74d9565be399248d74, type: 3}
   m_PrefabInstance: {fileID: 5035998248177543628}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &436109241359265253
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8364010025606911497}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3192922343725250237, guid: 26f8f2f966c0c214f8b664d0de575fbf, type: 3}
 --- !u!114 &1560459626311010421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,6 +828,27 @@ MonoBehaviour:
   MainCameraLeave:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &2934215551655881871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8364010025606911497}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1210358, y: 2.121035, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0.05}
 --- !u!1001 &5247127686104581104
 PrefabInstance:
   m_ObjectHideFlags: 0
