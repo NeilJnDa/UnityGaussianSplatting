@@ -44,9 +44,16 @@ public class Portal : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+
+        }
         InCameraView();
     }
+    private void SwitchPortal()
+    {
 
+    }
     private void InCameraView()
     {
         var planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
