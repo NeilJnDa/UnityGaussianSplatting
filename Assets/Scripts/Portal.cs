@@ -50,8 +50,20 @@ public class Portal : MonoBehaviour
         }
         InCameraView();
     }
+
+    private IEnumerator switchInst = null;
     private void SwitchPortal()
     {
+        if (switchInst != null) {
+            return;
+        }
+
+        switchInst = SwitchPortalCoroutine() as IEnumerator;
+        StartCoroutine(switchInst);
+    }
+    IEnumerator SwitchPortalCoroutine()
+    {
+        yield return null;
 
     }
     private void InCameraView()
