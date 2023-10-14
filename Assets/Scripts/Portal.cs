@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Rendering;
+using DG.Tweening;
 
 [SerializeField]
 public enum PortalState
@@ -46,7 +47,7 @@ public class Portal : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-
+            SwitchPortal();
         }
         InCameraView();
     }
@@ -63,7 +64,19 @@ public class Portal : MonoBehaviour
     }
     IEnumerator SwitchPortalCoroutine()
     {
-        yield return null;
+        if(portalState == PortalState.Enabled)
+        {
+            this.transform.DOScale(0, 1f);
+            yield return new WaitForSeconds(1f);
+            portalState = PortalState.Disabled;
+        }
+        else if(portalState == PortalState.Disabled)
+        {
+            this.transform.DOScale(0.6f, 1f);
+            yield return new WaitForSeconds(1f);
+            portalState = PortalState.Enabled;
+        }
+        switchInst = null;
 
     }
     private void InCameraView()
