@@ -17,6 +17,7 @@ MonoBehaviour:
   characters:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 11400000, guid: 4040947936b17d144ba4ba26c104cb2e, type: 2}
   - {fileID: 0}
   - {fileID: 11400000, guid: b7509b6adaa1ce4488442dd1f5c5470f, type: 2}
   - {fileID: 0}
@@ -26,6 +27,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0c091f52a92caa24fb77e45e5bdb2d84, type: 2}
   - {fileID: 11400000, guid: e35c61387a02f8749a557852b38fd706, type: 2}
   scenes:
+  - {fileID: 11400000, guid: 656d28df453c4d043b4804cddd4b1d2d, type: 2}
   - {fileID: 11400000, guid: 4440ca46862b43541b25eb4624b372ac, type: 2}
   - {fileID: 11400000, guid: 3fea75c7583e95a46b185a50510b1536, type: 2}
   - {fileID: 0}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0447596b1a67de49ba5720fda0bdabe, type: 3}
+  m_Name: Laura
+  m_EditorClassIdentifier: 
+  characterName: Laura
+  brain: workspaces/default-me1ve2x0mhhvz-mevhjaxq/characters/laura
+  avatar: {fileID: 0}
+  workspace: workspaces/default-me1ve2x0mhhvz-mevhjaxq
+  currentScene: workspaces/default-me1ve2x0mhhvz-mevhjaxq/characters/laura
+  ownerShip: 0
+  defaultThumbnail: {fileID: 2800000, guid: 583a307bc78cf18428b03056000478bf, type: 3}
+  index: 0
+  triggers: []
+  scenes:
+  - workspaces/default-me1ve2x0mhhvz-mevhjaxq/scenes/musuem
+  modelUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_model/84fb125d-e643-4b15-806a-a484463fc3fe.glb
+  posUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/84fb125d-e643-4b15-806a-a484463fc3fe_posture.jpg
+  previewImgUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/84fb125d-e643-4b15-806a-a484463fc3fe_portrait.jpg
+  characterID: 

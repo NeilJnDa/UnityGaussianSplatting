@@ -18,7 +18,7 @@ public class CameraFly : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -30,13 +30,12 @@ public class CameraFly : MonoBehaviour
 
     private void CameraRotate()
     {
-        if (Input.GetMouseButton(0))
-        {
-            transform.Rotate(new Vector3(Input.GetAxis("Mouse Y") * mouseSpeed, -Input.GetAxis("Mouse X") * mouseSpeed, 0));
-            MouseX = transform.rotation.eulerAngles.x;
-            MouseY = transform.rotation.eulerAngles.y;
-            transform.rotation = Quaternion.Euler(MouseX, MouseY, transform.rotation.eulerAngles.z);
-        }
+
+        transform.Rotate(new Vector3(-Input.GetAxis("Mouse Y") * mouseSpeed, Input.GetAxis("Mouse X") * mouseSpeed, 0));
+        MouseX = transform.rotation.eulerAngles.x;
+        MouseY = transform.rotation.eulerAngles.y;
+        transform.rotation = Quaternion.Euler(MouseX, MouseY, 0);
+        
 
     }
 
