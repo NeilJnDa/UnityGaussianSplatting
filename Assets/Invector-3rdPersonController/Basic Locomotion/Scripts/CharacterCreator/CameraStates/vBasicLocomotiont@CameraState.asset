@@ -17,19 +17,19 @@ MonoBehaviour:
   - Name: Default
     forward: -1
     right: 0
-    defaultDistance: 2.5
+    defaultDistance: 1.29
     maxDistance: 80
     minDistance: 0.6
-    height: 1.25
+    height: 1.04
     smooth: 10
     smoothDamp: 2
     xMouseSensitivity: 3
     yMouseSensitivity: 3
-    yMinLimit: -75
-    yMaxLimit: 75
+    yMinLimit: -32.64706
+    yMaxLimit: 16.176476
     xMinLimit: -360
     xMaxLimit: 360
-    rotationOffSet: {x: 0.84, y: 0.99, z: 0}
+    rotationOffSet: {x: 0.84, y: 6.18, z: 0}
     cullingHeight: 1.8
     cullingMinDist: 0.01
     fov: 60
@@ -137,8 +137,8 @@ MonoBehaviour:
     fixedAngle: {x: 0, y: 0}
     lookPoints:
     - pointName: point_01
-      positionPoint: {x: 26.55739, y: 11.5149355, z: -14.382481}
-      eulerAngle: {x: 18.395494, y: 3.0748887, z: 0.00039740835}
+      positionPoint: {x: 4.3, y: 5, z: -12.3}
+      eulerAngle: {x: 18.395487, y: 3.0748909, z: 0.0003973521}
       freeRotation: 1
     cameraMode: 2
   - Name: Sliding
@@ -176,3 +176,49 @@ MonoBehaviour:
       eulerAngle: {x: 2.0625482, y: 271.75256, z: -0.00016467154}
       freeRotation: 0
     cameraMode: 2
+  - Name: New State6
+    forward: 60
+    right: -0.15
+    defaultDistance: 1.5
+    maxDistance: 3
+    minDistance: 0.5
+    height: 0
+    smooth: 10
+    smoothDamp: 0
+    xMouseSensitivity: 3
+    yMouseSensitivity: 3
+    yMinLimit: -40
+    yMaxLimit: 80
+    xMinLimit: -360
+    xMaxLimit: 360
+    rotationOffSet: {x: 0, y: 0, z: 0}
+    cullingHeight: 0.2
+    cullingMinDist: 0.1
+    fov: 60
+    useZoom: 0
+    fixedAngle: {x: 0, y: 0}
+    lookPoints: []
+    cameraMode: 0
+  - Name: New State7
+    forward: 60
+    right: 0
+    defaultDistance: 1.26
+    maxDistance: 3
+    minDistance: 0.5
+    height: 1.04
+    smooth: 10
+    smoothDamp: 0
+    xMouseSensitivity: 2
+    yMouseSensitivity: 2
+    yMinLimit: -15
+    yMaxLimit: 15
+    xMinLimit: -360
+    xMaxLimit: 360
+    rotationOffSet: {x: 0, y: 6.18, z: 0}
+    cullingHeight: 0.2
+    cullingMinDist: 0.1
+    fov: 60
+    useZoom: 0
+    fixedAngle: {x: 0, y: 0}
+    lookPoints: []
+    cameraMode: 0

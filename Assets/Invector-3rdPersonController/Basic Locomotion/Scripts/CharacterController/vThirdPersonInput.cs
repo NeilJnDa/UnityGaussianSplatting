@@ -31,7 +31,8 @@ namespace Invector.vCharacterController
         public GenericInput strafeInput = new GenericInput("Tab", "RightStickClick", "RightStickClick");
         public GenericInput jumpInput = new GenericInput("Space", "X", "X");
         public GenericInput rollInput = new GenericInput("Q", "B", "B");
-
+        public bool isInputBoxOn = true;
+        public GenericInput inputBoxInput = new GenericInput("T","T", "T");
         [HideInInspector] public bool lockInput;
 
         [vEditorToolbar("Camera Settings")]
@@ -434,6 +435,7 @@ namespace Invector.vCharacterController
             StrafeInput();
             JumpInput();
             RollInput();
+            InputBoxInput();
         }
 
         public virtual void MoveInput()
@@ -538,6 +540,18 @@ namespace Invector.vCharacterController
                 cc.Roll();
             }
         }
+        /// <summary>
+        /// New: Input box
+        /// </summary>
+        protected virtual void InputBoxInput()
+        {
+            if (inputBoxInput.GetButtonDown())
+            {
+                isInputBoxOn = !isInputBoxOn;
+                ShowCursor(isInputBoxOn);
+                LockCursor(isInputBoxOn);
+            }
+        }
 
         #endregion       
 
@@ -545,6 +559,7 @@ namespace Invector.vCharacterController
 
         public virtual void CameraInput()
         {
+            if(isInputBoxOn) return;
             if (!cameraMain)
             {
                 return;
