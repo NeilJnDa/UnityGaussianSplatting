@@ -43,6 +43,8 @@ namespace Inworld.Model
         [SerializeField] string m_HeadEyeAsset = "Animations/REMRPM";
         [SerializeField] FacialAnimationData m_FaceData;
         [SerializeField] float m_MorphTime = 0.5f;
+        [SerializeField] Vector3 lookAtOffset = new Vector3();
+
         #endregion
 
         #region Private Variables
@@ -96,7 +98,7 @@ namespace Inworld.Model
                 _StopLookAt();
                 return;
             }
-            _StartLookAt(m_trLookAt.position);
+            _StartLookAt(m_trLookAt.position + lookAtOffset);
         }
         #endregion
 
