@@ -444,7 +444,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 523637401814638573, guid: bea17b1175d41c248abf42fcd2ce7cb5, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 523637401814638573, guid: bea17b1175d41c248abf42fcd2ce7cb5, type: 3}
       propertyPath: m_Materials.Array.size
@@ -879,7 +879,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.1210358, y: 2.121035, z: 0.2}
+  m_Size: {x: 2.1210358, y: 2.121035, z: 0.6}
   m_Center: {x: 0, y: 0, z: 0.05}
 --- !u!1001 &5247127686104581104
 PrefabInstance:
