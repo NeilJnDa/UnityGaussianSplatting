@@ -46,7 +46,7 @@ namespace Inworld.Sample
         }
         void Update()
         {
-            if (Input.GetKeyUp(KeyCode.BackQuote))
+            if (Input.GetKeyUp(KeyCode.BackQuote) || Input.GetKeyUp(KeyCode.Return))
             {
                 m_GlobalChatCanvas.SetActive(!m_GlobalChatCanvas.activeSelf);
                 if (m_CameraController)

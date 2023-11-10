@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullName: workspaces/default-me1ve2x0mhhvz-mevhjaxq/scenes/musuem
   shortName: Musuem
-  description: The Finnish National Museum is a stunning building in Helsinki that
-    tells the story of Finland. Inside, there are modern and traditional displays
-    with ancient artifacts and contemporary art, giving you a glimpse of Finland's
-    history and culture. Laura, the museum's passionate narrator, makes the exhibits
-    come alive with her engaging storytelling.
+  description: The National Museum is a stunning building in Beijing that tells the
+    story of China. Inside, there are modern and traditional displays with ancient
+    artifacts and contemporary art.
   characters:
   - workspaces/default-me1ve2x0mhhvz-mevhjaxq/characters/laura
+  - workspaces/default-me1ve2x0mhhvz-mevhjaxq/characters/tao
   triggers: []
   index: 0
