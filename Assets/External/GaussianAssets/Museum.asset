@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33b71fae31e6c7d438e8566dc713e666, type: 3}
+  m_Name: Museum
+  m_EditorClassIdentifier: 
+  m_FormatVersion: 20231006
+  m_SplatCount: 950254
+  m_BoundsMin: {x: -7.7132416, y: -21.463873, z: -8.0589695}
+  m_BoundsMax: {x: 35.565372, y: 17.618647, z: 34.2794}
+  m_DataHash:
+    serializedVersion: 2
+    Hash: 6091a5938731dc63af9151c751b3e79d
+  m_PosFormat: 2
+  m_ScaleFormat: 2
+  m_SHFormat: 3
+  m_ColorFormat: 8
+  m_ColorWidth: 2048
+  m_ColorHeight: 464
+  m_PosData: {fileID: 4900000, guid: 249e8f45d3c08694ab0e387fe678ef02, type: 3}
+  m_ColorData: {fileID: 4900000, guid: 95e8b8b57c351394f8226b3c9cb99254, type: 3}
+  m_OtherData: {fileID: 4900000, guid: 31705753c90bb2a4eafc8d1b4c481473, type: 3}
+  m_SHData: {fileID: 4900000, guid: 24ffa7ddc3c1bb841b5104d114f290c4, type: 3}
+  m_ChunkData: {fileID: 4900000, guid: 59597469c8082a04d888839c71fd5e2d, type: 3}
+  m_Cameras: []
