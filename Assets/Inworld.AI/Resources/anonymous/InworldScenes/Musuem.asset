@@ -18,7 +18,10 @@ MonoBehaviour:
     story of China. Inside, there are modern and traditional displays with ancient
     artifacts and contemporary art.
   characters:
-  - workspaces/default-me1ve2x0mhhvz-mevhjaxq/characters/laura
   - workspaces/default-me1ve2x0mhhvz-mevhjaxq/characters/tao
+  - workspaces/default-me1ve2x0mhhvz-mevhjaxq/characters/ximing
+  - workspaces/default-me1ve2x0mhhvz-mevhjaxq/characters/simon
+  - workspaces/default-me1ve2x0mhhvz-mevhjaxq/characters/yu_fujia
+  - workspaces/default-me1ve2x0mhhvz-mevhjaxq/characters/jinda
   triggers: []
   index: 0

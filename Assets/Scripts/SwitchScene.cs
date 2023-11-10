@@ -33,15 +33,15 @@ public class SwitchScene : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha5) && CheckValidSceneIndex(4))
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(4);
         }
         if (Input.GetKeyDown(KeyCode.Alpha6) && CheckValidSceneIndex(5))
         {
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(5);
         }
         if (Input.GetKeyDown(KeyCode.Alpha7) && CheckValidSceneIndex(6))
         {
-            SceneManager.LoadScene(7);
+            SceneManager.LoadScene(6);
         }
     }
     bool CheckValidSceneIndex(int index)

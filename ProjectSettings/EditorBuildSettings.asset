@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/DemoScenesForBuild/2Car.unity
     guid: 13c4a14d2a5109749a8df701b35642b0
+  - enabled: 1
+    path: Assets/DemoScenesForBuild/3Head.unity
+    guid: dcded8fe6da192f48b67952ac20bcba0
+  - enabled: 1
+    path: Assets/DemoScenesForBuild/4Tech.unity
+    guid: 02ed6ca7278be7a4d81c1bd2adee7dea
+  - enabled: 1
+    path: Assets/DemoScenesForBuild/5Trebuchet.unity
+    guid: 5494b5f1b2cdcb5479bdb3607ff9b48b
+  - enabled: 1
+    path: Assets/DemoScenesForBuild/6Museum.unity
+    guid: 7ca598bcdbeb5bc408704f12278d7703
   m_configObjects: {}
